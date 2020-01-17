@@ -4,6 +4,7 @@ from typing import Dict, List
 
 
 def get_github_jobs_data() -> List[Dict]:
+    """retrieve github jobs data in form of a list of dictionaries after json processing"""
     all_data = []
     page = 1
     more_data = True

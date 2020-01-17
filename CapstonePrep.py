@@ -18,11 +18,14 @@ def get_github_jobs_data() -> List[Dict]:
         page += 1
     return all_data
 
+def save_data(data, filename='data.txt'):
+    with  open(filename, 'a') as file:
+        for item in data:
+            print(item, file=file)
 
 def main():
     data = get_github_jobs_data()
-    for item in data:
-        print(item)
+    save_data(data)
 
 
 if __name__ == '__main__':

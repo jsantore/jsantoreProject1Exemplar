@@ -12,6 +12,8 @@ def get_github_jobs_data() -> List[Dict]:
     while more_data:
         url = f"https://jobs.github.com/positions.json?page={page}"
         raw_data = requests.get(url)
+        if "GitHubber!" in raw_data:  # sometimes if I ask for pages too quickly I get an error; only happens in testing
+            continue  # trying continue, but might want break
         partial_jobs_list = raw_data.json()
         all_data.extend(partial_jobs_list)
         if len(partial_jobs_list) < 50:

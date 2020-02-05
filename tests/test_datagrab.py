@@ -9,6 +9,7 @@ def get_data():
 
 
 def test_jobs_dict(get_data):
+    # first required test
     assert len(get_data) >=100
     assert type(get_data[1]) is dict
 
@@ -28,6 +29,7 @@ def test_jobs_data(get_data):
 
 
 def test_save_data():
+    # second required test
     demo_data = {'id': 1234, 'type': "Testable"}
     list_data = []
     list_data.append(demo_data)

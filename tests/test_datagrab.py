@@ -1,5 +1,4 @@
 import pytest
-from typing import Dict
 import CapstonePrep
 
 
@@ -8,9 +7,11 @@ def get_data():
     import CapstonePrep
     return CapstonePrep.get_github_jobs_data()
 
+
 def test_jobs_dict(get_data):
-    assert len(get_data) >=1
+    assert len(get_data) >=100
     assert type(get_data[1]) is dict
+
 
 def test_jobs_data(get_data):
     # any real data should have both full time and Contract
@@ -24,6 +25,7 @@ def test_jobs_data(get_data):
         elif item['type'] == 'Full Time':
             full_time_found = True
     assert  contract_found and full_time_found
+
 
 def test_save_data():
     demo_data = {'id': 1234, 'type': "Testable"}

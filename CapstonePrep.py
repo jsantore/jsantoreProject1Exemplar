@@ -22,14 +22,17 @@ def get_github_jobs_data() -> List[Dict]:
         page += 1
     return all_data
 
+
 def save_data(data, filename='data.txt'):
-    with  open(filename, 'a') as file:
+    with open(filename, 'a') as file:
         for item in data:
             print(item, file=file)
+
 
 def save_to_db(data):
     """:keyword data is a list of dictionaries. Each dictionary is a JSON object with a bit of jobs data"""
     pass
+
 
 def main():
     data = get_github_jobs_data()
